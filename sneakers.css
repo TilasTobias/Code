@@ -1,0 +1,297 @@
+body{
+    margin: 0;
+    font-family: serif;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    animation: alternate-reverse 1s ease-in-out;
+
+}
+
+button {
+    padding: 10px;
+    border-radius: 15px;
+    width: 150px;
+    border: none;
+    background: rgb(31, 30, 30);
+    color: white;
+    font-weight: 600;
+    font-size: 1.03rem;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.btn-primary:hover{
+  background: rgba(25,111, 145, 0.98);
+}
+
+.btn-secondary:hover{
+    background: rgba(233,66, 135, 0.98);
+}
+
+nav{
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(124, 123, 123,0.98);
+    color: white;
+    padding: 0.3rem;
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    padding: 0.1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 600ms;
+    margin: 5px;
+}
+ nav ul li a:hover{
+    color: rgb(31, 30, 30);
+    background: white;
+    border-radius: 5px;
+    padding: 5px;
+ }
+
+ .social-icons {
+          position:absolute;
+          right: 110px;
+ }
+
+ .social-icon {
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: 600ms;
+ }
+
+.social-icon:hover i {
+    transform: scale(1.2);
+}
+
+.yt {
+    color: red;
+}
+
+ig {
+     color: rgb(233, 66, 135);
+}
+
+.landing-page {
+    min-height: 100vh;
+    max-height: fit-content;
+    background: rgb(31, 30, 30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-page--text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-width: 500px;
+    color: white;
+    text-align: center;
+    text-overflow: wrap;
+    padding: 10px;
+
+}
+
+.landing-page--hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 40%;
+    height: 100vh;
+    background: white;
+    cursor: pointer;
+    overflow: hidden;
+    margin-right: 50px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0,0.2);
+    animation: fromRight 1s cubic-bezier(0.075,0.82,0.165,1);
+}
+ .landing-page--hero:hover > .sneaker-shadow {
+    transform: scale(1.1) translateY(-10px);
+
+ }
+
+ .landing-page--hero:hover >.sneaker-img--hero {
+    transform: translate(10px,30px) rotate(15deg);
+ }
+
+ .sneaker-img--hero {
+       width: 400px;
+       height: 400px;
+       object-fit: contain;
+       background: white;
+       transition: 600ms;
+
+ }
+
+ .sneaker-shadow {
+    background: black;
+    filter: blur(10px);
+    opacity: 0.5;
+    height: 25px;
+    width: 60%;
+    transition: 600ms;
+    transform: translateY(-10px);
+    border-radius: 50%;
+
+ }
+
+ .product-section {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3rem;
+    height: 100vh;
+    background-image: url(wall.jpg);
+    background-size:cover ;
+    overflow: hidden;
+}
+
+.product-card--section {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    cursor: pointer;
+    transition: 600ms;
+
+}
+
+
+.product-card--section:hover >.splash-img {
+    transform: scale(1.8);
+    opacity: 1;
+
+}
+
+.product-card {
+    z-index: 2;
+    position: relative;
+    height: 400px;
+    width: 400px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.splash-img {
+    opacity: 0;
+    z-index: 1;
+    top: 0;
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    transition: 600ms;
+}
+.product-card--img {
+    width: 400px;
+    height: 500px;
+    object-fit: contain;
+    background: white;
+    border-radius: 5px;
+
+}
+
+footer {
+    background: rgb(31, 30, 30);
+    color: white;
+    padding: 1rem;
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fromRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 767px){
+    nav ul {
+        opacity: 0;
+    }
+    .landing-page--text {
+        min-width: 100%;
+    }
+    .landing-page--hero {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .landing-page{
+        flex-direction: column;
+    }
+
+    .product-section {
+        height: max-content;
+        padding: 150px;
+    }
+
+    .product-card--section{
+        margin-bottom: 50px;
+
+    }
+    .product-card {
+        width: 300px;
+    }
+    .product-card--img{
+        width: 300px;
+    }
+    .product-card--section {
+        width: 300px;
+    }
+} 
+    
+
+
+ 
